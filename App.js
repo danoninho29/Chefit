@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground,Platform } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground,Platform ,NavLink} from 'react-native';
 import Noticias from './components/noticias'
 
 
@@ -15,7 +15,7 @@ export default function App() {
       <View style={styles.main}>
         <Noticias />
       </View>
-      <View style={styles.footer}></View>
+      <View style={styles.footer}></View> 
       <StatusBar style="auto" />
     </View>
   );
