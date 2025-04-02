@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground,Platform ,NavLink} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground,Platform,} from 'react-native';
 import Noticias from './components/noticias'
 
 
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <ImageBackground source={require('./assets/images/grenn-bottom.jpg')} style={styles.backgoundimage}>
+        <ImageBackground source={require('./assets/images/chefitBackgroundLaranja.jpeg')} style={styles.backgoundimage}>
         <Text style={styles.text}>Chefit</Text>
         </ImageBackground>
       </View>
@@ -24,11 +24,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2C3539',
+    backgroundColor: '#454545',
     // alignItems: 'center',
     // justifyContent: 'center',
     // backgroundimage: img2,
-    ...(Platform.OS === 'android' ? { backgroundColor: 'gray', marginTop:30 } : {}),
+    ...(Platform.OS === 'android' ? { backgroundColor: 'black', marginTop:30 } : {}),
   },
   header:{
     top:0,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding:0,
   },
   text:{
-    color:"black",
+    color:"white",
     fontSize:40,
     fontWeight:"bold",
   },

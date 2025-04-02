@@ -1,20 +1,33 @@
-import { StyleSheet, Text, View, ImageBackground, ScrollView } from 'react-native';
+import {useState,} from "react"
+import { StyleSheet,Button, Text, View, ImageBackground, ScrollView, TouchableOpacity, Modal } from 'react-native';
+import Teste from "../components/teste"
 
 const noticias = {
-    1:{image: require('../assets/images/hypeDrink.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
-    2:{image: require('../assets/images/hypeDrink.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
-    3:{image: require('../assets/images/hypeDrink.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
+    1:{image: require('../assets/images/hypeDrink2.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
+    2:{image: require('../assets/images/shakeAbacaxi.webp'), text: 'Este é um exemplo de uma noticia, quer saber...'},
+    3:{image: require('../assets/images/cr7EstouComVoce.png'), text: 'Este é um exemplo de uma noticia, quer saber...'},
     4:{image: require('../assets/images/hypeDrink.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
     5:{image: require('../assets/images/hypeDrink.jpg'), text: 'Este é um exemplo de uma noticia, quer saber...'},
 }
 
 const Card = ({id})=>{
+    //
     const noticia = noticias[id]
     if (!noticia) return null;
+    //modais
+    const [modalVisible, setModalVisible] = useState(false);
     return(
-        <ImageBackground source={noticia.image} style={styles.cards} imageStyle={styles.image}>
-            <Text style={styles.text}>{noticia.text}</Text>
-        </ImageBackground>
+            <TouchableOpacity onPress={()=>{setModalVisible(true)}}>
+                <ImageBackground source={noticia.image} style={styles.cards} imageStyle={styles.image}>
+                    <Modal animationType="slide" visible={modalVisible}>
+                        <View style={styles.produto}>
+                        <Card id={1} />
+                            <Button onPress={()=>{setModalVisible(false)}} title="Ver os outros produtos" color="#ff5733"/>
+                        </View>    
+                    </Modal>
+                    <Text style={styles.text}>{noticia.text}</Text>
+                </ImageBackground>
+            </TouchableOpacity>
     )
 }
 export default function screen(){
@@ -59,5 +72,13 @@ const styles = StyleSheet.create({
         margin:10,
         borderBottomColor:"white",
         border:25,
-    }
+    },
+    produto:{
+        backgroundColor:'#2C3539',
+        flex:1,
+    },
+    button:{
+        bottom:100,
+        color:"white"
+    },
 })
