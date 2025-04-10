@@ -26,12 +26,12 @@ const noticias = {
     text: "Equilíbrio e saúde com o poder dos fitoterápicos Herbalife. A linha Herba foi desenvolvida para apoiar o seu corpo de forma natural, com ingredientes de origem vegetal que auxiliam no seu bem-estar diário.",
   },
   4: {
-    image: require("../assets/images/hypeDrink.jpg"),
-    text: "Este é um exemplo de uma notícia, quer saber?",
+    image: require("../assets/images/liftOffLimao.jpg"),
+    text: "A explosão de energia que você já conhece, em um novo sabor: cítrico, leve e refrescante.Conheça este suplemento alimentar com um blend exclusivo de cafeína + taurina que estimula o sistema nervoso central. Uma combinação de SABOR e REFRESCÂNCIA que te ajuda a ter mais ENERGIA e CONCENTRAÇÃO nas suas atividades do dia a dia.Muito mais que uma bebida energética, além de  ser baixo em calorias, o Liftoff contém vitaminas do Complexo B e C que auxiliam no metabolismo energético + Biotina que contribui para a manutenção do cabelo e da pele.",
   },
   5: {
-    image: require("../assets/images/hypeDrink.jpg"),
-    text: "Este é um exemplo de uma notícia, quer saber?",
+    image: require("../assets/images/fiberConcetrade.jpg"),
+    text: "O Fiber Concentrate é uma mistura concentrada para preparar uma bebida deliciosa que combina os benefícios das fibras com a hidratação que seu corpo precisa.Cada porção de 15 ml contém cerca de 3g de fibra solúvel de milho, um ingrediente que auxilia o bom funcionamento do intestino e contribui para atingir a ingestão diária recomendada de fibras.Disponível nos irresistíveis sabores manga, uva e limão com mel, o Fiber Concentrate é perfeito para quem busca uma maneira prática de aumentar a ingestão de fibras, sem comprometer o sabor e a hidratação.",
   },
 };
 
