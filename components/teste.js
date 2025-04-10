@@ -3,7 +3,11 @@ import { StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity }
 export default function(){
   return(
     <View>
-      <Text>Teste</Text>
+      <Text style={{color:'red'}}>Teste</Text>
     </View>
   )
 };
+
+const styles = StyleSheet.create({
+
+})
