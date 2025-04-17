@@ -70,12 +70,6 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
   },
-  text:{
-    fontSize: 22,
-    fontWeight:'bold',
-    color: 'white',
-    margin: 10,
-  },
   backgoundimage: {
     width: '100%',
     height: '100%',
@@ -90,3 +84,5 @@ const styles = StyleSheet.create({
     borderColor:'#ff5733',
   },
 });
+
+
