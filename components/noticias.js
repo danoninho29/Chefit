@@ -5,7 +5,7 @@ import {
   Text,
   View,
   ImageBackground,
-  ScrollView,
+  ScrollView, 
   TouchableOpacity,
   Modal,
   BackHandler,

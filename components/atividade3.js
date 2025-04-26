@@ -9,7 +9,7 @@ export default function () {
     2023: { texto: 'Em 2023, Oscar percebeu que os clientes queriam mais do que comidas prontas: eles queriam orientação alimentar prática. Criou então os “Combos Funcionais”, como o Combo Energia (com suco detox, sanduíche proteico e barrinha sem açúcar). O app foi atualizado para permitir que o cliente registrasse metas, alergias, preferências e histórico de pedidos. A Chefit também começou a incluir mensagens motivacionais nas embalagens, incentivando hábitos saudáveis e trazendo o cliente para mais perto do propósito da marca.' },
     2024: { texto: 'Em 2024, A Chefit recebeu um selo nacional de Transparência Nutricional e foi destaque em programas de TV e revistas de alimentação saudável. Oscar lançou a primeira unidade franqueada em outra cidade, mantendo os mesmos padrões de qualidade e valores. As embalagens foram reformuladas com um layout moderno, incluindo selos coloridos para proteínas, fibras, calorias e açúcares. O sucesso foi tanto que uma rede de academias se tornou parceira oficial, distribuindo os produtos nos próprios estabelecimentos.' },
   };
-
+ 
   const [anoSelecionado, setAnoSelecionado] = useState(2020);
 
   return (
@@ -17,11 +17,11 @@ export default function () {
       <View style={styles.card}>
       <Text style={{ color:'white', fontSize: 22 }}>História do fundador</Text>
         <ImageBackground
-          source={require('../assets/images/chefitBackgroundLaranja.jpeg')}
+          source={require('../assets/images/fotoPerfil.webp')}
           style={styles.person}
           imageStyle={styles.image}
         >
-          <Text style={textos.person}>Oscar</Text>
+          <Text style={textos.person}>Oscar Reis</Text>
         </ImageBackground>
 
         <Text style={{ color: 'white', marginTop: 10 }}>{anos[anoSelecionado].texto}</Text>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 15,
     borderWidth: 2,
-    borderColor: '#ff5733',
+    borderColor: 'rgba(255, 87, 51 ,0.5)',
     marginTop: 10,
   },
   person: {

@@ -10,6 +10,7 @@ export const globalStyle = StyleSheet.create({
         backgroundColor:'#ff5733',
         borderRadius:15,
         width:"100%",
+        maxHeight:60,
         height:"8%",
         alignItems:"center",
         justifyContent:"center",
@@ -21,6 +22,8 @@ export const globalStyle = StyleSheet.create({
         color:"white",
     },
     blackTitle:{
-
+      fontSize:30,
+        fontWeight:'bold',
+        color:"black",
     },
   })

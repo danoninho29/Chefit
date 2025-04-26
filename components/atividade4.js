@@ -9,7 +9,7 @@ export default function App() {
   const [genero, setGenero] = useState('');
   const [raca, setRaca] = useState('');
   const [altura, setAltura] = useState(1.0);
-  const [nome, setNome] = useState('');
+  const [nome, setNome] = useState(''); 
   const [sobrenome, setSobrenome] = useState('');
   const [telefone, setTelefone] = useState('');
   const [objetivo, setObjetivo] = useState('');
@@ -38,7 +38,7 @@ export default function App() {
 
   return (
     <ScrollView  style={styles.container}>
-      <Text style={globalStyle.whiteTitle}>Vamos fazer a sua análise corporal?</Text>
+      <Text style={globalStyle.blackTitle}>Analise Corporal</Text>
       <Text style={globalStyle.text}>Nome</Text>
       <TextInput value={nome} onChangeText={setNome} placeholder='Ex: Joãozinho' style={styles.input} />
 
