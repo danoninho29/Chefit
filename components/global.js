@@ -9,7 +9,9 @@ export const globalStyle = StyleSheet.create({
     orangeButton:{
         backgroundColor:'#ff5733',
         borderRadius:15,
+        marginTop:15,
         width:"100%",
+        minHeight:55,
         maxHeight:60,
         height:"8%",
         alignItems:"center",

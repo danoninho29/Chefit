@@ -11,7 +11,7 @@ import {globalStyle} from "./components/global"
 
 export default function App() {
     const [modalVisible, setModalVisible] = useState(false);
-    const [modal, setModal] = useState(false);
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#000" style="light" />
@@ -27,16 +27,9 @@ export default function App() {
           <About />
           <Atv3 />
           <Text style={globalStyle.whiteTitle}>Vamos fazer a sua análise corporal?</Text>
-          <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal(true)}}>
-            <Text>Vamos</Text>
-          </TouchableOpacity>
-          <Modal animationType="slide" visible={modal}>
-            <Atv4 />
-            <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal(false)}}>
-            <Text>Voltar</Text>
-          </TouchableOpacity>
-          </Modal>
+
           
+          <Atv4 />
         </View>
 
         <View style={styles.footer}></View>

@@ -5,7 +5,8 @@ import Slider from '@react-native-community/slider';
 import {globalStyle} from "./global"
 
 export default function App() {
-  const [modal,setModalVisible] = useState(false)
+  const [modal,setModal] = useState(false)
+  const [modal2, setModal2] = useState(false);
   const [genero, setGenero] = useState('');
   const [raca, setRaca] = useState('');
   const [altura, setAltura] = useState(1.0);
@@ -37,6 +38,13 @@ export default function App() {
    
 
   return (
+    <View>
+    <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal(
+      true)}}>
+     <Text>Vamos</Text>
+    </TouchableOpacity>
+  
+    <Modal animationType="slide" visible={modal}>
     <ScrollView  style={styles.container}>
       <Text style={globalStyle.blackTitle}>Analise Corporal</Text>
       <Text style={globalStyle.text}>Nome</Text>
@@ -107,11 +115,11 @@ export default function App() {
           <Picker.Item label="Outro" value="outro" />
         </Picker>
       </View>
-
-        <TouchableOpacity onPress={() => setModalVisible(true)} style={globalStyle.orangeButton}>
+        
+        <TouchableOpacity onPress={() => setModal2(true)} style={globalStyle.orangeButton}>
           <Text>Enviar e ver resultado</Text>
         </TouchableOpacity>
-        <Modal animationType="slide" visible={modal} >
+        <Modal animationType="slide" visible={modal2} >
           <ScrollView style={styles.modalResultado}>
             <Text style={styles.title}>Olá {nome}, vamos conferir os seus dados?</Text>
             <View style={styles.cardResultado}>
@@ -133,12 +141,17 @@ export default function App() {
               <Text style={styles.modalText}>{nome}, estaremos entrando em contato com você pelo seu telefone {telefone}, informando mais sobre como alcançar os seus objetivos!</Text>
             </View>
           </ScrollView>
-            <TouchableOpacity  style={globalStyle.orangeButton} onPress={() => setModalVisible(false)} >
-              <Text style={styles.title}>Voltar</Text>
+            <TouchableOpacity  style={globalStyle.orangeButton} onPress={() => {setModal2(false), setModal(false)}} >
+              <Text style={styles.title}>Confirmar</Text>
             </TouchableOpacity>
         </Modal>
         <Text></Text>
     </ScrollView>
+      <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal2(false), setModal(false)}}>
+        <Text>Voltar</Text>
+      </TouchableOpacity>
+    </Modal>
+    </View>
   );
 }
 
