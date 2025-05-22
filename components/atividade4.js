@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor:'white',
+    maxWidth:600,
   },
   title:{
     fontSize:30,

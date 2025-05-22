@@ -11,6 +11,7 @@ export const globalStyle = StyleSheet.create({
         borderRadius:15,
         marginTop:15,
         width:"100%",
+        maxWidth:500,
         minHeight:55,
         maxHeight:60,
         height:"8%",

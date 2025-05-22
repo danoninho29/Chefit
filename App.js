@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     maxHeight:'10%',
   },
   main: {
-    marginBottom:70
+    marginBottom:70,
   },
   footer: {
     ...(Platform.OS === 'web'?{backgroundColor: '#ff5733',height: 50, bottom:0}:{}),

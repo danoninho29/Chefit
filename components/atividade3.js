@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
   view: {
     backgroundColor: 'black',
     padding: 10,
+    maxWidth:600,
+
   },
   card: {
     padding: 10,
