@@ -6,6 +6,11 @@ export const globalStyle = StyleSheet.create({
       fontWeight:'bold',
       color: 'black',
     },
+    logo: {
+      flex: 1,
+      backgroundColor: '#1A1A1D',
+      ...(Platform.OS === 'web' ? { flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } : { backgroundColor: '#000', marginTop: 30 }),
+    },
     orangeButton:{
         backgroundColor:'#ff5733',
         borderRadius:15,
