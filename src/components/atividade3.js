@@ -15,7 +15,7 @@ export default function () {
   return (
     <View style={styles.view}>
       <View style={styles.card}>
-      <Text style={{ color:'white', fontSize: 22 }}>História do fundador</Text>
+      <Text style={{ color:'white', fontSize: 26, marginBottom:10 }}>História do fundador</Text>
         <ImageBackground
           source={require('../assets/images/fotoPerfil.webp')}
           style={styles.person}
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     padding: 10,
     maxWidth:600,
-
+    height:'100%',
+    width:'100%'
   },
   card: {
     padding: 10,

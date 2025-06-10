@@ -16,7 +16,7 @@ function DrawerToggle() {
     const navigation = useNavigation();
   
     return (
-      <TouchableOpacity onPress={() => navigation.openDrawer()} style={globalStyle.logo}>
+      <TouchableOpacity onPress={() => navigation.openDrawer()} >
         <Text style={{ fontSize: 30, marginRight: 15 }}>☰</Text>
       </TouchableOpacity>
     );
@@ -24,12 +24,12 @@ function DrawerToggle() {
 
 export default function StackRoutes() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator  screenOptions={{ headerShown: false }}>
        <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Chefit',
+          title: 'StackChefit',
           headerRight: () => <DrawerToggle />,
         }}
       />

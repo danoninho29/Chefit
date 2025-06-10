@@ -15,7 +15,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       {/* <View style={styles.header}>
         <ImageBackground source={require('../assets/images/wall2.webp')} style={styles.backgoundimage}>
           <Text style={styles.logo}>Chefit</Text>
@@ -26,7 +26,6 @@ export default function HomeScreen() {
           <Noticias />
           <Text style={styles.text}>O que é Chefit?</Text>
           <About />
-          <Atv3 />
           <Text style={globalStyle.whiteTitle}>Vamos fazer a sua análise corporal?</Text>
           <Atv4 />
         </View>
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1A1A1D',
-    ...(Platform.OS === 'web' ? { flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } : { backgroundColor: '#000', marginTop: 30 }),
+    ...(Platform.OS === 'web' ? { flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } : { backgroundColor: '#000', /*marginTop: 30 */}),
   },
   header: {
     top: 0,
