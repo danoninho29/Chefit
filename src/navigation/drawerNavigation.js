@@ -5,6 +5,7 @@ import { Image , View} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import StackRoutes from './stackRoutes';
 import Sobre from '../components/atividade3';
+import teste from '../components/teste';
 import Perfil from '../screens/login';
 
 const Drawer = createDrawerNavigator();
@@ -55,6 +56,7 @@ export default function DrawerRoutes() {
       <Drawer.Screen name="Chefit" component={StackRoutes} />
       <Drawer.Screen name="Sobre" component={Sobre} />
       <Drawer.Screen name="Perfil" component={Perfil} />
+      <Drawer.Screen name="teste" component={teste} />
     </Drawer.Navigator>
     
   );

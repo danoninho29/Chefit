@@ -13,7 +13,8 @@ const LoginScreen = ({ navigation }) => {
     try {
       await signInWithEmailAndPassword(auth, email, senha);
       console.log("Login realizado")
-      // Redirecionar após login bem-sucedido (se desejar)
+      Alert.alert('Sucesso', 'Login realizado!');
+      navigation.navigate('teste')
       // navigation.replace('Dashboard');
     } catch (error) {
       Alert.alert('Erro no Login', error.message);
