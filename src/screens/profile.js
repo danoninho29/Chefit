@@ -32,7 +32,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/images/ex-noticias.png')} 
+        source={require('../assets/images/profile.png')} 
         style={styles.avatar}
       />
 
