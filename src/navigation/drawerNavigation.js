@@ -1,63 +1,89 @@
-// src/navigation/drawerNavigation.js
-
-import React from 'react';
-import { Image , View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, View, ActivityIndicator } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../services/FireBaseConfig';
+
 import StackRoutes from './stackRoutes';
 import Sobre from '../components/atividade3';
 import teste from '../components/teste';
-import Perfil from '../screens/login';
+import Perfil from '../screens/profile'; 
+import ACorporal from '../components/atividade4'; 
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerRoutes() {
-  return (
+  const [usuario, setUsuario] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    <Drawer.Navigator  drawerPosition="left"
-      screenOptions={{ 
-        drawerType:'back',
-        // overlayColor:'	rgba(255, 87, 51, 0.6)',
-        headerShown: true , 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUsuario(user);
+      setLoading(false);
+    });
+
+    return unsubscribe;
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#000' }}>
+        <ActivityIndicator size="large" color="#FF5733" />
+      </View>
+    );
+  }
+
+  return (
+    <Drawer.Navigator
+      drawerPosition="left"
+      screenOptions={{
+        drawerType: 'back',
+        headerShown: true,
         headerTintColor: '#FFF',
-        drawerActiveTintColor:'#FF573' , 
-        drawerActiveBackgroundColor:'rgba(	255, 87, 51, 0.9)' ,
-        drawerInactiveBackgroundColor:'rgba(0, 0, 0, 0.9)' ,
+        drawerActiveTintColor: '#FF5733',
+        drawerActiveBackgroundColor: 'rgba(255, 87, 51, 0.9)',
+        drawerInactiveBackgroundColor: 'rgba(0, 0, 0, 0.9)',
         headerBackground: () => (
           <Image
-            source={require('../assets/images/wall2.webp')} // substitua pela sua imagem
+            source={require('../assets/images/wall2.webp')}
             style={{ width: '100%', height: '100%' }}
             resizeMode="cover"
           />
         ),
-
-        headerStyle:{
-          backgroundColor:'black',
+        headerStyle: {
+          backgroundColor: 'black',
         },
         drawerStyle: {
           backgroundColor: '#000',
-          borderRightWidth:1.5,
-          borderColor:'#ff5733',
-          borderOpacity: 0.2,
+          borderRightWidth: 1.5,
+          borderColor: '#ff5733',
         },
         drawerItemStyle: {
-          borderColor: 'rgba(	255, 87, 51, 0.7)',
+          borderColor: 'rgba(255, 87, 51, 0.7)',
           borderWidth: 1,
-          marginTop:10,
-          opacity: 1,
-          borderRadius:30,
+          marginTop: 10,
+          borderRadius: 15,
         },
         drawerLabelStyle: {
-          color: '#FFF', //cor do texto
+          color: '#FFF',
           fontSize: 20,
           fontFamily: 'Arial',
-          fontWeight:'bold',
+          fontWeight: 'bold',
         },
-      }}>
+      }}
+    >
+      {/* Sempre acessível: Login/Cadastro via Stack */}
       <Drawer.Screen name="Chefit" component={StackRoutes} />
-      <Drawer.Screen name="Sobre" component={Sobre} />
-      <Drawer.Screen name="Perfil" component={Perfil} />
-      <Drawer.Screen name="teste" component={teste} />
+
+      {/* Telas extras só para usuários logados */}
+      {usuario && (
+        <>
+          <Drawer.Screen name="Sobre" component={Sobre} />
+          <Drawer.Screen name="Perfil" component={Perfil} />
+          <Drawer.Screen name="Análise Corporal" component={ACorporal} />
+          <Drawer.Screen name="Teste" component={teste} />
+        </>
+      )}
     </Drawer.Navigator>
-    
   );
 }

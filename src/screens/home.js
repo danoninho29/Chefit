@@ -2,7 +2,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { useState } from "react";
-import { StyleSheet, Text, View, ImageBackground, ScrollView, Platform, TouchableOpacity, Modal } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Platform, TouchableOpacity, Modal } from 'react-native';
 import Noticias from '../components/noticias';
 import About from '../components/about';
 import Atv4 from '../components/atividade4'
@@ -23,15 +23,15 @@ export default function HomeScreen() {
       <ScrollView vertical>
         <View style={styles.main}>
           <Noticias />
-          <Text style={styles.text}>O que é Chefit?</Text>
+          <Text style={globalStyle.whiteTitle}>O que é Chefit?</Text>
           <About />
-          <Text style={globalStyle.whiteTitle}>Vamos fazer a sua análise corporal?</Text>
-          <Atv4 />
+          <Text style={globalStyle.whiteTitle}>Venha visitar nossa loja</Text>
+          <Image source={require('../assets/images/LojaChefit.png')} style={{ width: '95%', height: 300, borderRadius: 15 , margin:10 }} />
         </View>
 
         <View style={styles.footer}></View>
       </ScrollView>
-      <TouchableOpacity style={styles.navMenu} onPress={() => { setModalVisible(true) }}>
+      {/* <TouchableOpacity style={styles.navMenu} onPress={() => { setModalVisible(true) }}>
         <Modal animationType="slide" visible={modalVisible}>
           <Teste />
           <TouchableOpacity style={globalStyle.orangeButton} onPress={() => { setModalVisible(false) }}>
@@ -39,7 +39,7 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </Modal>
         <Text style={{ color: '#ff5733', fontSize: 22, alignItems: 'center' }}>Menu de navegação</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginBottom: 70,
   },
   footer: {
-    ...(Platform.OS === 'web' ? { backgroundColor: '#ff5733', height: 50, bottom: 0 } : {}),
+    ...(Platform.OS === 'web' ? { backgroundColor: '#ff5733', height: 0, bottom: 0 } : {}),
   },
   logo: {
     color: 'white',

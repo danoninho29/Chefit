@@ -25,14 +25,16 @@ export const globalStyle = StyleSheet.create({
         marginBottom:5,
     },
     whiteTitle:{
-        fontSize:30,
+        fontSize:25,
         fontWeight:'bold',
         color:"white",
+        margin: 10,
     },
     blackTitle:{
-      fontSize:30,
+      fontSize:25,
         fontWeight:'bold',
         color:"black",
+        margin: 10,
     },
   })
 

@@ -8,9 +8,10 @@ import {
   ScrollView, 
   TouchableOpacity,
   Modal,
-  BackHandler,
+
   Platform,
 } from "react-native";
+import { globalStyle } from "./global";
 
 const noticias = {
   1: {
@@ -76,7 +77,7 @@ const Card = ({ id }) => {
 export default function Screen() {
   return (
     <View>
-      <Text style={styles.title}>Últimas notícias</Text>
+      <Text style={globalStyle.whiteTitle}>Últimas notícias</Text>
       <ScrollView horizontal style={styles.scroll}>
         <Card id={1} />
         <Card id={2} />

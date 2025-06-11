@@ -1,10 +1,10 @@
-import { StyleSheet,ScrollView, Text, View, TextInput, Switch, Button, Modal, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet,ScrollView, Text, View, TextInput, Switch, Button, Modal, TouchableOpacity } from 'react-native';
 import { useState } from "react";
 import { Picker } from '@react-native-picker/picker';
 import Slider from '@react-native-community/slider';
 import {globalStyle} from "./global"
 
-export default function App() {
+export default function App({navigation}) {
   const [modal,setModal] = useState(false)
   const [modal2, setModal2] = useState(false);
   const [genero, setGenero] = useState('');
@@ -38,10 +38,12 @@ export default function App() {
    
 
   return (
-    <View>
+    <View style={{backgroundColor:'black', flex:1, padding:10, alignItems:'center', justifyContent:'center', }}>
+      <Text style={globalStyle.whiteTitle}>Vamos fazer a sua analise corporal?</Text>
+      <Image source={require('../assets/images/felicidadeCorporal.jpg')} style={{width:'100%', height:'40%', borderRadius:15,}} />
     <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal(
       true)}}>
-     <Text>Vamos</Text>
+     <Text style={globalStyle.blackTitle} >Vamos</Text>
     </TouchableOpacity>
   
     <Modal animationType="slide" visible={modal}>
@@ -116,9 +118,7 @@ export default function App() {
         </Picker>
       </View>
         
-        <TouchableOpacity onPress={() => setModal2(true)} style={globalStyle.orangeButton}>
-          <Text>Enviar e ver resultado</Text>
-        </TouchableOpacity>
+
         <Modal animationType="slide" visible={modal2} >
           <ScrollView style={styles.modalResultado}>
             <Text style={styles.title}>Olá {nome}, vamos conferir os seus dados?</Text>
@@ -141,71 +141,92 @@ export default function App() {
               <Text style={styles.modalText}>{nome}, estaremos entrando em contato com você pelo seu telefone {telefone}, informando mais sobre como alcançar os seus objetivos!</Text>
             </View>
           </ScrollView>
-            <TouchableOpacity  style={globalStyle.orangeButton} onPress={() => {setModal2(false), setModal(false)}} >
-              <Text style={styles.title}>Confirmar</Text>
-            </TouchableOpacity>
+          <TouchableOpacity
+  style={globalStyle.orangeButton}
+  onPress={() => {
+    setModal2(false);
+    setModal(false);
+    navigation.navigate('Chefit');
+  }}
+>
+  <Text style={globalStyle.blackTitle}>Confirmar</Text>
+</TouchableOpacity>
         </Modal>
         <Text></Text>
-    </ScrollView>
+    <TouchableOpacity onPress={() => setModal2(true)} style={globalStyle.orangeButton}>
+          <Text style={globalStyle.blackTitle}>Calcular</Text>
+        </TouchableOpacity>
       <TouchableOpacity style={globalStyle.orangeButton} onPress={()=>{setModal2(false), setModal(false)}}>
-        <Text>Voltar</Text>
+        <Text style={globalStyle.blackTitle} >Voltar</Text>
       </TouchableOpacity>
+      <Text style={globalStyle.blackTitle} ></Text>
+    </ScrollView>
     </Modal>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor:'white',
-    maxWidth:600,
+    backgroundColor: '#fff',
+    maxWidth: 600,
+    alignSelf: 'center',
+
   },
-  title:{
-    fontSize:30,
-    fontWeight:'bold',
-    color:"black",
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#ff5733',
+    marginBottom: 15,
   },
   input: {
-    borderWidth: 2,
-    borderColor: 'black',
-    borderRadius: 15,
-    marginBottom: 10,
-    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 15,
+    backgroundColor: '#f9f9f9',
   },
   switchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginVertical: 10,
-  },
-  picker: {
-    backgroundColor: 'black',
-    borderWidth: 2,
-    borderColor: '#ff5733',
-    borderRadius: 15,
-    color: 'white',
+    justifyContent: 'space-between',
+    marginVertical: 15,
+    gap: 10,
   },
   pickerContainer: {
-    marginVertical: 10,
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: '#ff5733',
-    backgroundColor: 'white',
+    marginBottom: 15,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#f1f1f1',
     overflow: 'hidden',
   },
-  modalResultado:{
-    padding:10,
+  picker: {
+    height: 50,
+    color: '#333',
   },
-  modalText:{
-    fontSize:20
+  modalResultado: {
+    padding: 20,
+    backgroundColor: '#fff',
   },
-  cardResultado:{
-    margin:5,
-    padding:10,
-    borderRadius: 15,
-    borderWidth: 2,
+  modalText: {
+    fontSize: 18,
+    color: '#333',
+    marginBottom: 8,
+    lineHeight: 24,
+  },
+  cardResultado: {
+    marginBottom: 20,
+    padding: 15,
+    borderRadius: 12,
+    borderWidth: 1,
     borderColor: '#ff5733',
-    backgroundColor: 'white',
+    backgroundColor: '#fdfdfd',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
 });

@@ -7,8 +7,9 @@ import { auth } from '../services/FireBaseConfig';
 
 import HomeScreen from '../screens/home';
 import Login from '../screens/login';
-import Registrar from '../screens/cadastro';
+import Cadastro from '../screens/cadastro';
 import Profile from '../screens/profile';
+import ACorporal from '../components/atividade4'; 
 import Dashboard from '../screens/dashboard';
 
 const Stack = createStackNavigator();
@@ -48,7 +49,7 @@ export default function StackRoutes() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {usuario ? (
-        // Usuário logado: 
+        // Usuário logado: telas privadas
         <>
           <Stack.Screen
             name="Home"
@@ -60,12 +61,13 @@ export default function StackRoutes() {
           />
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="ACorporal" component={ACorporal} />
         </>
       ) : (
-        // Usuário não logado: 
+        // Usuário não logado: telas públicas
         <>
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Registrar" component={Registrar} />
+          <Stack.Screen name="Cadastro" component={Cadastro} />
         </>
       )}
     </Stack.Navigator>
