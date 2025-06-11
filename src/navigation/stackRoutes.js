@@ -6,8 +6,10 @@ import { TouchableOpacity, Text,  } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/home';
 import Login from '../screens/login';
-import Registrar from '../screens/registrar';
+import Registrar from '../screens/cadastro';
 import Profile from '../screens/profile';
+import Dashboard from '../screens/dashboard';
+
 import { globalStyle } from "../components/global"
 
 const Stack = createStackNavigator();
@@ -36,6 +38,7 @@ export default function StackRoutes() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Registrar" component={Registrar} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Dashboard" component={Dashboard} />
     </Stack.Navigator>
   );
 }

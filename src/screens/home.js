@@ -5,7 +5,6 @@ import { useState } from "react";
 import { StyleSheet, Text, View, ImageBackground, ScrollView, Platform, TouchableOpacity, Modal } from 'react-native';
 import Noticias from '../components/noticias';
 import About from '../components/about';
-import Atv3 from '../components/atividade3'
 import Atv4 from '../components/atividade4'
 import Teste from '../components/teste'
 import { globalStyle } from "../components/global"

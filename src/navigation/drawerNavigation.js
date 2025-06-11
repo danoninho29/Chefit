@@ -5,7 +5,7 @@ import { Image , View} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import StackRoutes from './stackRoutes';
 import Sobre from '../components/atividade3';
-import Perfil from '../screens/profile';
+import Perfil from '../screens/login';
 
 const Drawer = createDrawerNavigator();
 
@@ -30,7 +30,6 @@ export default function DrawerRoutes() {
         ),
 
         headerStyle:{
-          fontSize:70,
           backgroundColor:'black',
         },
         drawerStyle: {
