@@ -6,7 +6,7 @@ import { auth } from '../services/FireBaseConfig';
 
 import StackRoutes from './stackRoutes';
 import Sobre from '../components/atividade3';
-import teste from '../components/teste';
+import piadas from '../screens/piadasAPI';
 import Perfil from '../screens/profile'; 
 import ACorporal from '../components/atividade4'; 
 
@@ -81,7 +81,7 @@ export default function DrawerRoutes() {
           <Drawer.Screen name="Sobre" component={Sobre} />
           <Drawer.Screen name="Perfil" component={Perfil} />
           <Drawer.Screen name="Análise Corporal" component={ACorporal} />
-          <Drawer.Screen name="Teste" component={teste} />
+          <Drawer.Screen name="Piadas API" component={piadas} />
         </>
       )}
     </Drawer.Navigator>
